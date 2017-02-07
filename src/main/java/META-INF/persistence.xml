@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    version="1.0">
+
+	<persistence-unit name="default" transaction-type="RESOURCE_LOCAL">
+<!-- 
+		<provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
+ -->
+		<non-jta-data-source>java:Test-DS</non-jta-data-source>
+		<class>org.jaredstevens.Person</class>
+		<properties>
+			<property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema" />
+		</properties>
+		<!--
+		<properties>
+			<property name="openjpa.ConnectionDriverName" value="com.mysql.jdbc.Driver" />
+		</properties>
+		-->
+		<!--
+		<properties>
+			<property name="openjpa.ConnectionURL" value="jdbc:mysql://localhost:3306/test" />
+			<property name="openjpa.ConnectionUserName" value="root" />
+			<property name="openjpa.ConnectionPassword" value="" />
+		</properties>
+		-->
+	</persistence-unit>
+</persistence>
